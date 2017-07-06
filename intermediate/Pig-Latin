@@ -1,0 +1,36 @@
+/* function determines wheter
+   the input is a vowel */
+function aVowel(char){
+  switch(char){
+      case "a":
+      case"e":
+      case"i":
+      case"o":
+      case"u":
+      return true;
+    default: return false;
+  }
+}
+
+function translatePigLatin(str) {
+  var arr = str.split("");
+  
+  //Check if first letter is a vowel
+  //Move (push&shift) consonant to the end
+  if(!aVowel(arr[0])){
+    arr.push(arr[0]);
+    arr.shift();
+    
+    /* If the second letter is a consonant
+       as well, move it */
+    if(!aVowel(arr[0])){
+    arr.push(arr[0]);
+    arr.shift();
+    }
+    
+    //else, push w
+  } else arr.push("w");
+  
+  arr.push("ay");
+  return arr.join("");
+}
