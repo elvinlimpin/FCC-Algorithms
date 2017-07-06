@@ -1,0 +1,26 @@
+/* Using character codes, this funciton determines
+   whether letters input are next to each other in
+   the alphabet */
+function far(str, i){
+  if(str.charCodeAt(i) - str.charCodeAt(i-1) > 1)
+    return true;
+  return false;
+}
+
+// Function returns the next character
+function nextChar(str, i){
+ return String.fromCharCode(str.charCodeAt(i) - 1);
+}
+
+function fearNotLetter(str) {
+  
+  /* Check if any of the letters are "far" and return
+     the next character */
+  for(var i = 1; i < str.length; i++){
+    if(far(str, i)) return nextChar(str, i);
+  }
+  
+  return undefined;
+}
+ 
+fearNotLetter("abce");
