@@ -1,0 +1,21 @@
+
+function convertToRoman(num) {
+ //define 0-9 for every place value (except thousands)
+ var ones = ["","I","II","III","IV","V","VI","VII","VIII","IX"];
+ var tens = ["","X","XX","XXX","XL","L","LX","LXX","LXXX","XC"];
+ var hundreds = ["","C","CC","CCC","CD","D","DC","DCC","DCCC","CM"];
+ var thousands = ["","M","MM","MMM"];
+  
+ /* cast input num as a string so that it
+    can be split and reversed */
+ var arr = num.toString().split("").reverse();
+  
+ // add zeros until the thousands place
+ while(arr.length < 4)
+   arr.push("0");
+ 
+ //map the digit to the roman equivalent, and return
+ return thousands[arr[3]] + hundreds[arr[2]] + tens[arr[1]] + ones[arr[0]];
+}
+
+convertToRoman(891);
