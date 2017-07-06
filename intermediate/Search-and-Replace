@@ -1,0 +1,33 @@
+
+function myReplace(str, before, after) {
+  
+  //split by the word
+  result = str.split(" ");
+  for(var i = 0; i < result.length; i++){
+    
+    //check words until it matches the "before" word
+    if(result[i] === before){
+      
+      /* If the first letter is capitalized, also
+         capitalize the first letter of the after word */
+      if(result[i][0] === result[i][0].toUpperCase()){
+        
+        // Split, select first letter, change case, join
+      	splitArr = after.split("");
+        splitArr[0] = splitArr[0].toUpperCase();
+      	splitArr = splitArr.join("");
+        
+        result[i] = splitArr;
+      }
+      
+      // Else, just replace before with after
+      else {
+      result[i] = after;
+      }
+        
+    }
+  }
+  return result.join(" ");
+}
+
+myReplace("He is Sleeping on the couch", "Sleeping", "sitting");
