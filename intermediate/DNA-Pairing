@@ -1,0 +1,22 @@
+//Determine the opposing base
+function opp(base){
+  switch(base){
+    case "G": return "C";
+    case "C": return "G";
+    case "T": return "A";
+    case "A": return "T";
+  }
+}
+
+function pairElement(str) {
+  var arr = str.split("");
+  
+  /* Change every element into an
+     array of the base pair */
+  for(var i = 0; i < arr.length; i++){
+    arr[i] = [arr[i], opp(arr[i])];
+  }
+  return arr;
+}
+
+pairElement("GCG");
