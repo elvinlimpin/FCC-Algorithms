@@ -1,0 +1,26 @@
+
+function bouncer(arr) {
+  var result = [];
+  
+  // check every entry in the array if they
+  // are true
+  for (var i = 0; i < arr.length; i++) {
+   if (checkFalse(arr[i])){
+       // If not false, add to array
+       result.push(arr[i]);
+   }
+  }
+  return result;
+}
+
+function checkFalse(x) {
+  // Checks if an entry is a falsy value
+  result = true;
+  switch(String(x)){
+    case "false": case "null": case "NaN":
+          case "0": case "undefined": case "":
+                  result = false; break;
+  } return result;
+}
+
+bouncer([1, null, NaN, 2, undefined]);
