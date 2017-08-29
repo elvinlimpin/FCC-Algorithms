@@ -1,0 +1,12 @@
+function confirmEnding(str, target) {
+  
+  // get the last letter
+  var lastLetter = str.substr(str.length - target.length, str.length);
+  
+  // if the same as the target, return true
+  if (lastLetter === target) {
+      return true;
+      } return false;
+}
+
+confirmEnding("Bastian", "n");
