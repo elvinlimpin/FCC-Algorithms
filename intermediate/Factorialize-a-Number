@@ -1,0 +1,11 @@
+function factorialize(finalNum) {
+  var result = 1; // start with 1
+  
+  // multiply every number to the result
+  //until you reach the finalNum
+  for (var i = 1; i < finalNum + 1;i++)
+    result *= i;
+  return result;
+}
+
+factorialize(5);
