@@ -1,0 +1,26 @@
+
+function truncateString(str, num) {
+  var resultantNum; var finalStr = "";
+  
+  /* if the given maximum string length num
+     is less than or equal to 3, then the
+     addition of the three dots does not
+     add to the string length
+     */
+  if (num > 3 && str.length > num) {
+    // thus, take away 3
+    resultantNum = num -3;
+  } else resultantNum = num;
+  
+  // add the chracters to the final string
+  for (var i = 0; i < resultantNum; i++)
+    finalStr += str.charAt(i);
+  
+  // if the string is longer than the num,
+  // add the ellipsis
+  if (str.length > num) finalStr += "...";
+  
+  return finalStr;
+}
+
+truncateString("A-tisket a-tasket A green and yellow basket", "A-tisket a-tasket A green and yellow basket".length);
