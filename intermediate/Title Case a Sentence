@@ -1,0 +1,20 @@
+function titleCase(str) {
+  
+  // separate all words, and change them to lower case
+  str = str.toLowerCase().split(" ");
+  
+  // go through each word
+  for (var i = 0; i < str.length; i++) {
+    var subStr = str[i].split("");
+    // change the first letter to uppercase
+    str[i] =  str[i].charAt(0).toUpperCase();
+    for (var j = 1; j < subStr.length; j++)
+    str[i] += subStr[j];
+  }
+  
+  // join the string again
+  str = str.join(" ");
+  return str;
+}
+
+titleCase("I'm a little tea pot");
