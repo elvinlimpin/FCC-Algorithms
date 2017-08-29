@@ -1,0 +1,14 @@
+function reverseString(str) {
+  var newStr = "";
+  
+  // split to letters
+  var array = str.split("");
+  array = array.reverse();
+  
+  // rejoin the string in the reverse order
+  for (var i = 0; i < array.length; i++)
+    newStr += array[i];
+  return newStr;
+}
+
+reverseString("hello");
