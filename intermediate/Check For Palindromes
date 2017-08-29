@@ -1,0 +1,21 @@
+function palindrome(str) {
+  
+  // change the string to lowercase and without
+  // special symbols
+  str = str.toLowerCase().replace(/[^0-9a-z]/gi, '');
+  
+  // split to letters
+  var array = str.split("");
+  
+  // check through all letters
+  for (var i = 0; i < array.length; i++) {
+    a = array[i];
+    b = array[array.length - i - 1];
+    
+    // if the last letter and the first letter
+    // are not the same, return false
+    if (a !== b) return false;
+  } return true;
+}
+
+palindrome("_raceCar");
