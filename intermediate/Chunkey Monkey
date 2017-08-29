@@ -1,0 +1,14 @@
+function chunkArrayInGroups(arr, size) {
+  var result = [];
+  
+  /* the interval is not i += 1, rather increases
+     by the size */
+  for (var i = 0; i < arr.length;i += size) {
+    
+    /* slice the array from the i value to the i
+       value to the size, and push that to the */
+    result.push(arr.slice(i,i + size));
+  } return result;
+}
+
+chunkArrayInGroups(["a", "b", "c", "d"], 2);
