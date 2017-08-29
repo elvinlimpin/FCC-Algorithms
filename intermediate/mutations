@@ -1,0 +1,16 @@
+
+function mutation(arr) {
+  // change the aray to lowercase
+  var a = arr[0].toLowerCase();
+  var b = arr[1].toLowerCase();
+  
+  // if some character in b does not
+  // exist in a, return false
+  for (var i = 0; i < b.length; i++) {
+    if (a.indexOf(b.charAt(i)) === -1) {
+      return false;
+    }
+  } return true;
+}
+
+mutation(["hello", "hey"]);
