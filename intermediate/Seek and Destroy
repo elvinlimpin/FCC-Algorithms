@@ -1,0 +1,20 @@
+
+function destroyer(arr,x,y,z) {
+  
+  // destroy functions for the filter
+  function destroyY(value){
+    return value !== y;
+  }
+    function destroyX(value){
+    return value !== x;
+  }
+    function destroyZ(value){
+    return value !== z;
+  }
+  
+  // use the filter function to return the
+  // arrays without the x y z numbers
+  return arr.filter(destroyY).filter(destroyX).filter(destroyZ);
+}
+
+destroyer([1, 2, 3, 1, 2, 3], 2, 3);
